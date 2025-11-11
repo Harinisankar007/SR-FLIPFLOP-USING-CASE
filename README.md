@@ -37,12 +37,36 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 /* write all the steps invloved */
 
 **PROGRAM**
+```
+Module exp_6sr(S,R,clk,Q,Qbar);
+input S,R,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always  @(posedge clk)
+begin
+Q=S|((~R)&Q);
+Qbar=R|((~S)&(Qbar));
+end
+endmodule
+```
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by: HARINI S
+RegisterNumber: 212224240049
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![exp_6sr LG](https://github.com/user-attachments/assets/06bd59bd-9bd7-4159-ac85-4b8db2ff6837)
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![exp_6sr WF](https://github.com/user-attachments/assets/c28968a7-7223-486e-a63e-a3683106ed21)
+
+
 **RESULTS**
+
+Thus To implement  SR flipflop using verilog and validating their functionality using their functional tables is verified.
